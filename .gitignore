@@ -1,0 +1,6 @@
+conf/local.conf
+cache
+downloads
+sstate-cache
+tmp
+bitbake-cookerdaemon.log
