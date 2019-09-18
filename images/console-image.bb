@@ -59,6 +59,7 @@ TOOLS_PKGS = " \
     iproute2 \
     iptables \
     less \
+    libopendps-tool \
     lsof \
     nmap \
     powertop \
