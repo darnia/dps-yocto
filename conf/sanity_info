@@ -1,4 +1,0 @@
-SANITY_VERSION 1
-TMPDIR /home/lkmikkel/WorkSpace/dcps/tmp
-SSTATE_DIR /home/lkmikkel/WorkSpace/dcps/sstate-cache
-NATIVELSBSTRING ubuntu-18.04
