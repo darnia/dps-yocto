@@ -1,12 +1,12 @@
 [Unit]
 Description=Hardware RNG Entropy Gatherer Daemon
 DefaultDependencies=no
-After=systemd-remount-fs.service
-Before=systemd-random-seed.service
+After=systemd-udev-settle.service
+Before=sysinit.target shutdown.target
+Conflicts=shutdown.target
 
 [Service]
 ExecStart=@SBINDIR@/rngd -f -r /dev/hwrng
-SuccessExitStatus=66
 
 [Install]
-WantedBy=systemd-random-seed.service
+WantedBy=multi-user.target
