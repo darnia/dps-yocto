@@ -7,7 +7,7 @@ inherit autotools pkgconfig systemd
 DEPENDS = "ell readline dbus"
 
 SRC_URI = "git://git.kernel.org/pub/scm/network/wireless/iwd.git"
-SRCREV = "2bbd61cd1c507c723c51c726f643b6de10753ca6"
+SRCREV = "8901ad39275bbd9d7bd868c8d7aac3f97d1131ad"
 S = "${WORKDIR}/git"
 
 PACKAGECONFIG ??= "${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)}"
@@ -15,7 +15,7 @@ PACKAGECONFIG[wired] = "--enable-wired,--disable-wired"
 PACKAGECONFIG[ofono] = "--enable-ofono,--disable-ofono"
 PACKAGECONFIG[systemd] = "--with-systemd-unitdir=${systemd_system_unitdir},--disable-systemd-service,systemd"
 
-EXTRA_OECONF += "--enable-external-ell"
+EXTRA_OECONF += "--enable-external-ell --disable-manual-pages"
 
 do_configure_prepend () {
     mkdir -p ${S}/build-aux
@@ -27,7 +27,14 @@ do_install_append() {
     install -d ${D}/var/lib/iwd
 }
 
-FILES_${PN} += "${datadir}/dbus-1"
+FILES_${PN} += "${datadir}/dbus-1 /lib/systemd/"
 FILES_${PN}-dev += "${libdir}/modules-load.d"
 
 SYSTEMD_SERVICE_${PN} = "iwd.service ${@bb.utils.contains('PACKAGECONFIG', 'wired', 'ead.service', '', d)}"
+
+RRECOMMENDS_${PN} = "\
+    kernel-module-pkcs7-message \
+    kernel-module-pkcs8-key-parser \
+    kernel-module-x509-key-parser \
+"
+
