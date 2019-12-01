@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-LINUX_VERSION = "4.19.73"
+LINUX_VERSION = "4.19.85"
 
-SRCREV = "4d486c17f636bb339c10cd73a07292220a973e01"
+SRCREV = "c42554e866307ec594ed4d109df900aeccd63a87"
 SRC_URI += "file://iwd.cfg"
 
 CMDLINE_append = "elevator=deadline"

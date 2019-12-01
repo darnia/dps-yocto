@@ -1,8 +1,9 @@
-RPIFW_DATE = "20190917"
-SRCREV = "f8e05108dbb3b5640f48b6b301296e979876836b"
-SRC_URI[md5sum] = "6be87554e4079653c631e81d1ca23e2c"
-SRC_URI[sha256sum] = "cf6db3b500af7ba4cfa7dc3e4fdac9f3bc74e6abde7877f4e22920724d3e88a6"
+RPIFW_DATE = "20191122"
+SRCREV = "204245361ea7b903494de666c4028dd7f21ee56e"
 
+LIC_FILES_CHKSUM = "file://LICENCE.broadcom;md5=c403841ff2837657b2ed8e5bb474ac8d"
+SRC_URI[md5sum] = "9a66d949db6f11ae09f1f1cb57db91e9"
+SRC_URI[sha256sum] = "43f349627d1adb65099585111fbbdbe7ccf1dff7daba3943034657dd26f33fd6"
 RPIFW_SRC_URI = "https://codeload.github.com/raspberrypi/firmware/tar.gz/${SRCREV}"
 RPIFW_S = "${WORKDIR}/firmware-${SRCREV}"
 
