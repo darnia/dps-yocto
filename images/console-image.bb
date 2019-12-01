@@ -22,7 +22,6 @@ CORE_OS = " \
     rng-tools \
     lmsensors-sensord lmsensors-sensorsdetect lmsensors-fancontrol lmsensors-pwmconfig \
     lmsensors-config-sensord lmsensors-config-fancontrol \
-    systemd-conf \
 "
 
 WIFI_SUPPORT = " \
