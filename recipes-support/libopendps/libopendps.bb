@@ -14,9 +14,9 @@ S = "${WORKDIR}/git"
 
 inherit cmake
 
-PACKAGES = "${PN} ${PN}-dbg ${PN}-tool"
+PACKAGES = "${PN} ${PN}-dbg dpsctl"
 
 FILES_${PN} = "${libdir} ${includedir}"
-FILES_${PN}-tool = "${bindir}"
+FILES_dpsctl = "${bindir}"
 
-RDEPENDS_${PN}-tool = "${PN}"
+RDEPENDS_dpsctl = "${PN}"

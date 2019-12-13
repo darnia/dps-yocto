@@ -11,27 +11,26 @@ DEFAULT_TIMEZONE = "UTC"
 
 PACKAGE_CLASSES = "package_ipk"
 
-DEPENDS += "bcm2835-bootfiles"
+DEPENDS_append_rpi = " bcm2835-bootfiles"
 
 CORE_OS = " \
     packagegroup-core-boot \
-    kernel-modules udev-rules-rpi \
+    kernel-modules \
     openssh openssh-keygen openssh-sftp-server \
     tzdata \
     sudo \
-    rng-tools \
-    lmsensors-sensord lmsensors-sensorsdetect lmsensors-fancontrol lmsensors-pwmconfig \
-    lmsensors-config-sensord lmsensors-config-fancontrol \
 "
+#    lmsensors-sensord lmsensors-sensorsdetect lmsensors-fancontrol lmsensors-pwmconfig 
+#    lmsensors-config-sensord lmsensors-config-fancontrol 
 
 WIFI_SUPPORT = " \
     iw \
-    linux-firmware-rpidistro-bcm43430 \
-    linux-firmware-rpidistro-bcm43455 \
-    bluez-firmware-rpidistro-bcm43430a1-hcd \
-    bluez-firmware-rpidistro-bcm4345c0-hcd \
     iwd \
     wireless-regdb-static \
+"
+
+BLUETOOTH_SUPPORT = " \
+    bluez5 \
 "
 
 CONN_PKGS = " \
@@ -39,12 +38,14 @@ CONN_PKGS = " \
     avahi-daemon \
     connman connman-client \
     connman-conf \
-    bluez5 \
 "
 
 GRAPHICS_PKGS = " \
-    kmscube \
     mesa \
+"
+
+DPS_TOOLS = " \
+    dpsctl \
 "
 
 TOOLS_PKGS = " \
@@ -58,7 +59,6 @@ TOOLS_PKGS = " \
     iproute2 \
     iptables \
     less \
-    libopendps-tool \
     lsof \
     nmap \
     powertop \
@@ -75,14 +75,25 @@ TOOLS_PKGS = " \
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${CONN_PKGS} \
-    ${WIFI_SUPPORT} \
+    ${DPS_TOOLS} \
     ${TOOLS_PKGS} \
-    ${GRAPHICS_PKGS} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', '${GRAPHICS_PKGS}', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', '${BLUETOOTH_SUPPORT}', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'wifi', '${WIFI_SUPPORT}', '', d)} \
+"
+
+IMAGE_INSTALL_rpi += " \
+    udev-rules-rpi \
+    rng-tools \
+    linux-firmware-rpidistro-bcm43430 \
+    linux-firmware-rpidistro-bcm43455 \
+    bluez-firmware-rpidistro-bcm43430a1-hcd \
+    bluez-firmware-rpidistro-bcm4345c0-hcd \
 "
 
 EXTRA_USERS_PARAMS = " \
         usermod -P '\$6\$Nox70m8xer9YqXp0\$p0X.VU5jGnl580eY0g7OIjF5anDSF2AY7TfsuN/Zerd4H8NECs.6asTk1Mg/R2SoAGC0Kt/JrCzjE9GdUsdHG.' root; \
-        useradd -m -d /home/dpsoper -s /bin/bash -p '\$6\$Nox70m8xer9YqXp0\$p0X.VU5jGnl580eY0g7OIjF5anDSF2AY7TfsuN/Zerd4H8NECs.6asTk1Mg/R2SoAGC0Kt/JrCzjE9GdUsdHG.' dpsoper; \
+        useradd -m -d /home/dpsoper -s /bin/sh -p '\$6\$Nox70m8xer9YqXp0\$p0X.VU5jGnl580eY0g7OIjF5anDSF2AY7TfsuN/Zerd4H8NECs.6asTk1Mg/R2SoAGC0Kt/JrCzjE9GdUsdHG.' dpsoper; \
         usermod -a -G sudo dpsoper; \ 
 "
 

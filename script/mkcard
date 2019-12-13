@@ -10,6 +10,7 @@ REQ_PROGRAMS=(gunzip grep umount dd parted resize2fs e2fsck sync lsblk)
 
 DEVICE=
 BMAPTOOL=/usr/bin/bmaptool
+FORCE_DD=
 declare -a DEVICE_LIST
 declare -a OPTION_LIST
 declare -a PARTION_LIST
@@ -35,6 +36,9 @@ find_sd_cards() {
 find_usb_sticks() {
 	IFS=' '
 	while read COL1 COL2 COL3 COL4 COL5; do
+		if [ -z "$COL1" ]; then
+			continue
+		fi
 		DEVICE_LIST+=("/dev/$COL1")
 		OPTION_LIST+=("$COL3 $COL4 (Size: $COL2) (Device: $COL1)")
 	done <<<$(lsblk -o NAME,SIZE,VENDOR,MODEL,TRAN | grep "usb$" 2>/dev/null)
@@ -96,10 +100,11 @@ if [ $? -eq 0 ]; then
 fi
 
 echo "Copy SD image to card: $DEVICE"
-if [ -x $BMAPTOOL ]; then
+if [ -x $BMAPTOOL -a -z FORCE_DD ]; then
 	sudo $BMAPTOOL copy "$SD_IMAGE" "$DEVICE"
 else
-	gunzip -c "$SD_IMAGE" | sudo dd of="$DEVICE" bs=1M iflag=fullblock oflag=direct conv=fsync status=progress
+	sudo dd of="$DEVICE" if="$SD_IMAGE" bs=1M iflag=fullblock oflag=direct conv=fsync status=progress
+	#gunzip -c "$SD_IMAGE" | sudo dd of="$DEVICE" bs=1M iflag=fullblock oflag=direct conv=fsync status=progress
 fi
 
 get_partitions "$DEVICE"
