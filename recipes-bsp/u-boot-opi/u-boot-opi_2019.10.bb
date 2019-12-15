@@ -23,12 +23,13 @@ SRC_URI = " \
   git://git.denx.de/u-boot.git;branch=master \
   file://boot.cmd \
   file://Add_Spi_Nor_Flash_Boot_Support.patch \
+  file://Increase_Kernel_Image_Max_Size.patch \
   file://0001-sunxi-h3-Fix-PLL1-setup-to-never-use-dividers.patch \
 "
 
-SRCREV = "8c5d4fd0ec222701598a27b26ab7265d4cee45a3"
+SRCREV = "61ba1244b548463dbfb3c5285b6b22e7c772c5bd"
 
-PV = "v2018.07+git${SRCPV}"
+PV = "v2019.10"
 
 S = "${WORKDIR}/git"
 

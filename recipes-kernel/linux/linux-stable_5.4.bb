@@ -18,7 +18,8 @@ SRCREV = "5f8bc2bb0e0f456e2217bbd1caac2acf211431c9"
 SRC_URI = " \
     git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-${LINUX_VERSION}.y \
     file://defconfig \
-    file://iwd.cfg \
 "
 
 SRC_URI_append_opi0 += "file://0001-dts-orange-pi-zero-Add-wifi-support.patch"
+SRC_URI_append_opi-r1 += "file://0001-r8152b-led.patch"
+SRC_URI_append_bpi-m2-zero += "file://0001-dts-sun8i-h2-plus-bananapi-m2-zero.patch"

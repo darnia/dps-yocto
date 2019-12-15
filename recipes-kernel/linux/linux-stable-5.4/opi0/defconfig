@@ -132,6 +132,7 @@ CONFIG_DMADEVICES=y
 CONFIG_DMA_SUN6I=y
 # CONFIG_IOMMU_SUPPORT is not set
 CONFIG_EXTCON=y
+CONFIG_EXTCON_USB_GPIO=y
 CONFIG_IIO=y
 CONFIG_AXP20X_ADC=y
 CONFIG_PWM=y
@@ -152,3 +153,121 @@ CONFIG_NLS_ISO8859_1=y
 CONFIG_PRINTK_TIME=y
 CONFIG_DEBUG_FS=y
 CONFIG_CRYPTO_DEV_SUN4I_SS=y
+CONFIG_ARM_CRYPTO=y
+CONFIG_CRYPTO_SHA1_ARM_NEON=y
+CONFIG_CRYPTO_SHA256_ARM=y
+CONFIG_CRYPTO_SHA512_ARM_NEON=y
+CONFIG_CRYPTO_AES_ARM_BS=y
+#
+CONFIG_IKCONFIG=y
+CONFIG_IKCONFIG_PROC=y
+#
+# MTD
+#
+CONFIG_MTD=y
+CONFIG_MTD_BLOCK=y
+CONFIG_SPI_MASTER=y
+CONFIG_MTD_SPI_NOR=y
+CONFIG_MTD_M25P80=y
+#
+# WiFI                                                
+#
+CONFIG_WIRELESS=y                                     
+CONFIG_WEXT_CORE=y                                    
+CONFIG_WEXT_PROC=y                                    
+CONFIG_CFG80211=m                                     
+# CONFIG_NL80211_TESTMODE is not set                  
+# CONFIG_CFG80211_DEVELOPER_WARNINGS is not set       
+CONFIG_CFG80211_DEFAULT_PS=y                          
+# CONFIG_CFG80211_DEBUGFS is not set                  
+# CONFIG_CFG80211_INTERNAL_REGDB is not set           
+CONFIG_CFG80211_CRDA_SUPPORT=y                        
+CONFIG_CFG80211_WEXT=y                                
+# CONFIG_LIB80211 is not set                          
+CONFIG_MAC80211=m                                     
+CONFIG_MAC80211_HAS_RC=y                              
+CONFIG_MAC80211_RC_MINSTREL=y                         
+CONFIG_MAC80211_RC_MINSTREL_HT=y
+# CONFIG_MAC80211_RC_MINSTREL_VHT is not set
+CONFIG_MAC80211_RC_DEFAULT_MINSTREL=y
+CONFIG_MAC80211_RC_DEFAULT="minstrel_ht"
+# CONFIG_MAC80211_MESH is not set
+# CONFIG_MAC80211_LEDS is not set         
+# CONFIG_MAC80211_DEBUGFS is not set
+# CONFIG_MAC80211_MESSAGE_TRACING is not set
+# CONFIG_MAC80211_DEBUG_MENU is not set
+CONFIG_MAC80211_STA_HASH_MAX_SIZE=0
+# CONFIG_WIMAX is not set                 
+CONFIG_RFKILL=m     
+CONFIG_RFKILL_LEDS=y                      
+CONFIG_RFKILL_INPUT=y 
+CONFIG_RFKILL_GPIO=m                      
+# CONFIG_NET_9P is not set      
+# CONFIG_CAIF is not set         
+# CONFIG_CEPH_LIB is not set  
+# CONFIG_NFC is not set                   
+# CONFIG_PSAMPLE is not set    
+# CONFIG_NET_IFE is not set  
+# CONFIG_LWTUNNEL is not set
+# CONFIG_DST_CACHE is not set
+# CONFIG_GRO_CELLS is not set                         
+# CONFIG_NET_DEVLINK is not set                       
+CONFIG_MAY_USE_DEVLINK=y
+CONFIG_HAVE_EBPF_JIT=y    
+# Wifi AP
+CONFIG_DRIVER_HOSTAP=y
+CONFIG_DRIVER_NL80211=y
+CONFIG_LIBNL32=y
+CONFIG_IAPP=y
+CONFIG_RSN_PREAUTH=y
+CONFIG_IEEE80211W=y
+CONFIG_EAP=y
+CONFIG_ERP=y
+CONFIG_EAP_MD5=y
+CONFIG_EAP_TLS=y
+CONFIG_EAP_MSCHAPV2=y
+CONFIG_EAP_PEAP=y
+CONFIG_EAP_GTC=y
+CONFIG_EAP_TTLS=y
+CONFIG_EAP_SIM=y
+CONFIG_EAP_AKA=y
+CONFIG_EAP_AKA_PRIME=y
+CONFIG_EAP_PWD=y
+CONFIG_WPS=y
+CONFIG_PKCS12=y
+CONFIG_RADIUS_SERVER=y
+CONFIG_IPV6=y
+CONFIG_IEEE80211R=y
+CONFIG_IEEE80211N=y
+CONFIG_WNM=y
+CONFIG_IEEE80211AC=y
+CONFIG_IEEE80211AX=y
+CONFIG_NO_VLAN=y
+CONFIG_INTERWORKING=y
+CONFIG_HS20=y
+CONFIG_FILS=y
+CONFIG_FILS_SK_PFS=y
+CONFIG_OCV=y
+CONFIG_OWE=y
+CONFIG_DPP=y
+CONFIG_SAE=y
+# IWD
+CONFIG_ASYMMETRIC_KEY_TYPE=y                              
+CONFIG_ASYMMETRIC_PUBLIC_KEY_SUBTYPE=y                    
+CONFIG_CRYPTO_AES=y                                       
+CONFIG_CRYPTO_ARC4=y                                      
+CONFIG_CRYPTO_CBC=y                                       
+CONFIG_CRYPTO_CMAC=y                                      
+CONFIG_CRYPTO_DES=y                                       
+CONFIG_CRYPTO_ECB=y                                       
+CONFIG_CRYPTO_HMAC=y                                      
+CONFIG_CRYPTO_MD5=y                                       
+CONFIG_CRYPTO_SHA1=y                                      
+CONFIG_CRYPTO_SHA256=y                                    
+CONFIG_CRYPTO_SHA512=y                                    
+CONFIG_CRYPTO_USER_API_HASH=y                             
+CONFIG_CRYPTO_USER_API_SKCIPHER=y                         
+CONFIG_KEY_DH_OPERATIONS=y                                
+CONFIG_PKCS7_MESSAGE_PARSER=y                             
+CONFIG_PKCS8_PRIVATE_KEY_PARSER=y                         
+CONFIG_X509_CERTIFICATE_PARSER=y                          

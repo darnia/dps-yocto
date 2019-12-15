@@ -7,7 +7,7 @@ SECTION = "libs"
 inherit autotools pkgconfig
 
 S = "${WORKDIR}/git"
-SRCREV = "4859be5b766ed6c68b99195c4d5f10d4bd539cf8"
+SRCREV = "b8d44f9a70cceb8544452cc1390b895f7bd2b786"
 SRC_URI = "git://git.kernel.org/pub/scm/libs/ell/ell.git"
 
 do_configure_prepend () {

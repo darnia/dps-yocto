@@ -19,7 +19,7 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-stable"
 PREFERRED_PROVIDER_u-boot = "u-boot-opi"
 PREFERRED_PROVIDER_virtual/bootloader = "u-boot-opi"
 
-KERNEL_IMAGETYPE ?= "uImage"
+KERNEL_IMAGETYPE ?= "zImage"
 
 IMAGE_FSTYPES += "ext4 tar.gz"
 

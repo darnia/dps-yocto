@@ -20,8 +20,6 @@ CORE_OS = " \
     tzdata \
     sudo \
 "
-#    lmsensors-sensord lmsensors-sensorsdetect lmsensors-fancontrol lmsensors-pwmconfig 
-#    lmsensors-config-sensord lmsensors-config-fancontrol 
 
 WIFI_SUPPORT = " \
     iw \
@@ -60,6 +58,7 @@ TOOLS_PKGS = " \
     iptables \
     less \
     lsof \
+    mtd-utils \
     nmap \
     powertop \
     procps \
@@ -67,6 +66,7 @@ TOOLS_PKGS = " \
     systemd-analyze \
     tcpdump \
     unzip \
+    usbutils \
     util-linux \
     wget \
     zip \
