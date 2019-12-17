@@ -10,10 +10,11 @@ COMPATIBLE_MACHINE = "(opi0)"
 
 PV = "git${SRCPV}"
 
-SRCREV = "d649e5a78efdc56ecd0951e35ca60db175650232"
+SRCREV = "aa01ba77b9360dd734b50f5b937960a50c5a0825"
 
 SRC_URI = "git://github.com/fifteenhex/xradio.git;protocol=https \
            file://Add_Targets_To_Makefile.patch \
+           file://0001-remain-channel.patch \
           "
 
 S = "${WORKDIR}/git"
