@@ -18,6 +18,7 @@ file://Licenses/lgpl-2.0.txt;md5=5f30f0716dfdd0d91eb439ebec522ec2 \
 file://Licenses/lgpl-2.1.txt;md5=4fbd65380cdd255951079008b364516c \
 file://Licenses/x11.txt;md5=b46f176c847b8742db02126fb8af92e2 \
 "
+COMPATIBLE_MACHINE = "(sun4i|sun5i|sun7i|sun8i|sun50i)"
 
 SRC_URI = " \
   git://git.denx.de/u-boot.git;branch=master \

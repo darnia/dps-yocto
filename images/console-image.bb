@@ -12,6 +12,7 @@ DEFAULT_TIMEZONE = "UTC"
 PACKAGE_CLASSES = "package_ipk"
 
 DEPENDS_append_rpi = " bcm2835-bootfiles"
+DEPENDS_append = " u-boot-opi"
 
 CORE_OS = " \
     packagegroup-core-boot \
