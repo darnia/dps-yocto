@@ -1,4 +1,5 @@
 conf/local.conf
+conf/sanity_info
 cache
 downloads
 sstate-cache
