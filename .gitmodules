@@ -9,4 +9,4 @@
 	url = git://git.yoctoproject.org/poky.git
 [submodule "meta-darnia"]
 	path = meta-darnia
-	url = git@github.com:darnia/meta-darnia.git
+	url = git://github.com/darnia/meta-darnia.git
